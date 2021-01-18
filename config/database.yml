@@ -24,6 +24,7 @@ default: &default
 development:
   <<: *default
   database: BudgetBuddy_api_development
+  username: vlad
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,6 +59,7 @@ development:
 test:
   <<: *default
   database: BudgetBuddy_api_test
+  username: vlad
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,5 +83,5 @@ test:
 production:
   <<: *default
   database: BudgetBuddy_api_production
-  username: BudgetBuddy_api
+  username: vlad
   password: <%= ENV['BUDGETBUDDY_API_DATABASE_PASSWORD'] %>
