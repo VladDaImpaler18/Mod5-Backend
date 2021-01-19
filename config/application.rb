@@ -33,5 +33,11 @@ module BudgetBuddyApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    
+    # Added to allow ActiveRecord to use UUID for PK
+    # Source: https://lab.io/articles/2017/04/13/uuids-rails-5-1/
+    config.generators do |g|
+      g.orm :active_record, primary_key_type: :uuid
+    end
   end
 end
