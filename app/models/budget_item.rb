@@ -4,5 +4,5 @@ class BudgetItem < ApplicationRecord
   # User.last => SELECT * FROM users ORDER BY created_at DESC LIMIT 1
 
   belongs_to :user
-  belongs_to :wishlist_item
+  belongs_to :wishlist_item, optional: true
 end
