@@ -85,6 +85,7 @@ credit2 = u.BudgetItems.build(
     :description => "",
     :amount => 500,
     :recurring => true
+    :expirationDate => "June-11-2031"
 );
 credit2.save;
 

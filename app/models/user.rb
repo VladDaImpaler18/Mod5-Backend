@@ -3,4 +3,7 @@ class User < ApplicationRecord
     
     has_many :WishlistItems
     has_many :BudgetItems
+
+    attribute :WishlistItems
+    attribute :BudgetItems
 end
