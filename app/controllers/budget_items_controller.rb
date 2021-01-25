@@ -34,6 +34,6 @@ class BudgetItemsController < ApplicationController
     private
 
     def budget_params
-        params.require(:budget_item).permit(:name, :amount, :recurring, :expirationDate, :user_id)
+        params.require(:budget_item).permit(:name, :description, :amount, :recurring, :expirationDate, :user_id)
     end
 end
