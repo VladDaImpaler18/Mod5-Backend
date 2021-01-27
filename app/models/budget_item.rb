@@ -5,4 +5,13 @@ class BudgetItem < ApplicationRecord
 
   belongs_to :user
   belongs_to :wishlist_item, optional: true
+  
+  validates :name, :amount, :user_id, presence: true
+
+  validates :expirationDate, presence: true, if: :recurring #This is probably easier to prevent in front end.
+  
+  private
+  def recurring?
+    recurring
+  end
 end

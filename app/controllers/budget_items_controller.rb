@@ -10,7 +10,6 @@ class BudgetItemsController < ApplicationController
     end
 
     def new
-        binding.pry
     end
 
     def edit
@@ -18,10 +17,9 @@ class BudgetItemsController < ApplicationController
     end
 
     def destroy
-        binding.pry
-        entry = BudgetItem.find_by(:id => params.require(:budget_item).permit(:name));
-        #entry.delete
-        render json: entry.id
+        entry = BudgetItem.find_by(:id => budget_params[:id]);
+        entry.delete
+        render json: entry, only: [:id]
     end
 
     def update
@@ -36,7 +34,7 @@ class BudgetItemsController < ApplicationController
 
     private
 
-    def budget_params
-        params.require(:budget_item).permit(:name, :description, :amount, :recurring, :expirationDate, :user_id)
+    def budget_params()
+        params.require(:budget_item).permit(:id, :name, :description, :amount, :recurring, :expirationDate, :user_id)
     end
 end
