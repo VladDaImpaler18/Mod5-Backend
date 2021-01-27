@@ -44,7 +44,8 @@ credit1 = u.BudgetItems.build(
     :name => "Salary",
     :description => "Paid on Bi-weekly basis. Taxes accounted for. Recurring until employment change. Amount has been adjusted to reflect rate of pay for ${Week, Month, YTD}",
     :amount => 1521,
-    :recurring => true
+    :recurring => true,
+    :expirationDate => 2030-05-29
 );
 credit1.save;
 
@@ -53,7 +54,7 @@ debt1 = u.BudgetItems.build(
     :description => "Student Loans. Collects at the end of the month. Amount has been adjusted to reflect timespan.",
     :amount => -1521,
     :recurring => true,
-    :expirationDate => "Jan-06-2053"
+    :expirationDate => 2053-01-06
 );
 debt1.save;
 #BudgetItems not saving. Probably due to WishlistItem FK
@@ -76,7 +77,8 @@ credit1 = u.BudgetItems.build(
     :name => "Salary",
     :description => "Paid on Bi-weekly basis. Taxes accounted for. Recurring until employment change. Amount has been adjusted to reflect rate of pay for ${Week, Month, YTD}",
     :amount => 1521,
-    :recurring => true
+    :recurring => true,
+    :expirationDate => 2053-01-06
 );
 credit1.save;
 
@@ -84,8 +86,8 @@ credit2 = u.BudgetItems.build(
     :name => "Child Support",
     :description => "",
     :amount => 500,
-    :recurring => true
-    :expirationDate => "June-11-2031"
+    :recurring => true,
+    :expirationDate => 2031-06-11
 );
 credit2.save;
 
@@ -94,7 +96,7 @@ debt1 = u.BudgetItems.build(
     :description => "House Payments. Collects at the end of the month. Amount has been adjusted to reflect timespan.",
     :amount => -3000,
     :recurring => true,
-    :expirationDate => "Jan-06-2053"
+    :expirationDate => 2053-01-06
 );
 debt1.save;
 
