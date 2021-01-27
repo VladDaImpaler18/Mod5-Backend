@@ -18,7 +18,10 @@ class BudgetItemsController < ApplicationController
     end
 
     def destroy
-
+        binding.pry
+        entry = BudgetItem.find_by(:id => params.require(:budget_item).permit(:name));
+        #entry.delete
+        render json: entry.id
     end
 
     def update
